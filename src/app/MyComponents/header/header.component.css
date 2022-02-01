@@ -1,0 +1,37 @@
+.navbar{
+    background-color: #8395a7;
+}
+.navbar-toggler, .navbar-toggler-icon{
+    color: #fff;
+}
+.container .navbar-brand{
+    position: relative;
+    display: inline-block;
+    font-size: 3.4rem;
+    font-weight: 800;
+    color: royalblue;
+    overflow: hidden;
+    background: linear-gradient(to right, midnightblue, midnightblue 50%, royalblue 50%);
+    background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position 275ms ease;
+    
+}
+.container .navbar-brand:hover{
+    background-position: 0 100%;
+}
+.nav-item a{
+    color: #fff;
+    font-size: 2.8rem;
+    font-weight: 500;
+}
+.nav-item a:hover{
+    color: #222f3e;
+    transition: all 0.5s linear 0.1s;
+}
+.navbar-nav li{
+    padding: 0 1.4rem;
+}

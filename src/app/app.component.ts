@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {CoronaAPIService} from './API/corona-api.service'
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'corona-tracker';
+
+  countryReceived :any;
+
+  sendCountryToNextComp(data:any){
+   this.countryReceived = data;
+  }
+
 }

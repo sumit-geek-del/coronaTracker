@@ -1,0 +1,73 @@
+<div class="container search-container" id="search">
+  <h1>Select the Country 👀 ?</h1>
+  <select class="countrySelect" #box (change)="getCountry(box.value)">
+    <option value="WorldWide" selected>WorldWide</option>
+    <option *ngFor="let countries of country" value="{{ countries }}">
+      {{ countries }}
+    </option>
+  </select>
+</div>
+
+<div class="container data-container" data-aos="fade-left">
+  <div class="card country-card" data-aos="fade-up">
+    <div class="card-body">
+      <h1 class="card-title" style="font-size: 3rem">Country</h1>
+      <h2 id="country_name">{{ countryReceived }}</h2>
+    </div>
+  </div>
+  <div class="card active_card" data-aos="fade-up">
+    <div class="card-body">
+      <h1 class="card-title">Active <b>Cases</b></h1>
+      <h2 id="active_cases" data-target="1000" class="counters">
+        {{ activeCases }}
+      </h2>
+    </div>
+  </div>
+  <div class="card confirmed_card" data-aos="fade-up">
+    <div class="card-body">
+      <h1 class="card-title">Critical <b>Cases</b></h1>
+      <h2 id="critical_cases" data-target="1000" class="counters">
+        {{ criticalCases }}
+      </h2>
+    </div>
+  </div>
+</div>
+<div class="container data-container" data-aos="fade-right">
+  <div class="card cases_card" data-aos="fade-up">
+    <div class="card-body">
+      <h1 class="card-title">Total <b>Cases</b></h1>
+      <h2 id="total_cases" data-target="1000" class="counters">
+        {{ totalCases }}
+      </h2>
+    </div>
+  </div>
+  <div class="card deaths_card" data-aos="fade-up">
+    <div class="card-body">
+      <h1 class="card-title">Total <b>Deaths</b></h1>
+      <h2 id="total_deaths" data-target="1000" class="counters">
+        {{ totalDeaths }}
+      </h2>
+    </div>
+  </div>
+  <div class="card test_card" data-aos="fade-up">
+    <div class="card-body">
+      <h1 class="card-title">Tests <b>Done</b></h1>
+      <h2 id="tests_done" data-target="1000" class="counters">
+        {{ testsDone }}
+      </h2>
+    </div>
+  </div>
+</div>
+
+<div class="container search-container1 chart" id="search">
+  <canvas baseChart
+      [datasets]="lineChartData"
+      [labels]="lineChartLabels"
+      [type]="'line'">
+</canvas>
+</div>
+
+
+<footer>
+  <h1>Made with Love ❤️ in &#x1F1EE; &#x1F1F3;</h1>
+</footer>

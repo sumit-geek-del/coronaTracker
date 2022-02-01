@@ -1,0 +1,166 @@
+.container{
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
+.search-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10rem 0;
+}
+.search-container h1{
+    font-size: 3.5rem;
+    font-weight: 700;
+    /* color: #222f3e; */
+    color: #fff;
+
+}
+.countrySelect{
+    background-color: #fff;
+    width: 60rem;
+    height: 2.7rem;
+    color: #000;
+    font-size: 1.8rem;
+    font-family: 'Montserrat', sans-serif !important;
+    outline: none;
+    border-radius: 0.3rem;
+    border-bottom: 0.2rem solid #40407a;
+    box-shadow: 0 0 10px #9521f3, 0 0 10px #c600ee, 0 0 25px #f704f7;
+    border: 0;
+    margin-top: 5rem;
+    padding-left: 1.7rem;
+}
+
+.data-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+.card{
+    width: 40rem;
+    align-items: center;
+    justify-content: center;
+    height: 15rem;
+    margin: 0 2rem 3rem 2rem;
+    overflow: hidden;
+    cursor: pointer;
+    
+    
+}
+.search-container1 canvas{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10rem 0;
+    width: 50%;
+}
+.card:hover{
+    transform: scale(1.1) !important;
+    
+}
+.country-card{
+    background-color: #341f97 !important;
+}
+.active_card{
+    background-color: #ee5253 !important;
+}
+.confirmed_card{
+    background-color: #26de81 !important;
+}
+.cases_card{
+    background-color: #2ed573 !important;
+}
+.deaths_card{
+    background-color: #eb2f06 !important;
+}
+.test_card{
+    background-color: #0c2461 !important;
+}
+.card-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+.card-body h2{
+    font-size: 5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+    word-spacing: 1rem;
+}
+.card-title{
+    font-size: 2rem;
+    color: #fff;
+}
+.card-title b{
+    font-size: 3.7rem;
+}
+footer h1{
+    text-align: center;
+    color: #fff;
+    margin: 3rem 0;
+    font-size: 3rem;
+}
+
+@media (max-width:768px){
+    .data-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    
+    }
+    .card-body h2{
+        font-size: 4rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #fff;
+        word-spacing: 1rem;
+    }
+    .card{
+        width: 30rem;
+        align-items: center;
+        justify-content: center;
+        height: 15rem;
+        margin: 2rem 0;
+        overflow: hidden;
+        cursor: pointer;
+        
+        
+    }
+    .countrySelect{
+        background-color: #fff;
+        width: 30rem;
+        height: 2.7rem;
+        color: #000;
+        font-size: 1.8rem;
+        font-family: 'Montserrat', sans-serif !important;
+        outline: none;
+        border-radius: 0.3rem;
+        border-bottom: 0.2rem solid #40407a;
+        box-shadow: 0 0 10px #9521f3, 0 0 10px #c600ee, 0 0 25px #f704f7;
+        border: 0;
+        margin-top: 5rem;
+        padding-left: 1.7rem;
+    }
+    .search-container1 canvas{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-right: 3rem;
+    width:120%;
+    }
+    footer h1{
+        text-align: center;
+        color: #fff;
+        margin: 3rem 0;
+        font-size: 2rem;
+    }
+}
