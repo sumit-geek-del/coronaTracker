@@ -7,8 +7,12 @@ import { HeaderComponent } from './MyComponents/header/header.component';
 import { MainBodyComponent } from './MyComponents/main-body/main-body.component';
 import { SearchContainerComponent } from './MyComponents/search-container/search-container.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatInputModule} from '@angular/material/input';
 import {NgChartsModule} from 'ng2-charts'
+import {CountUpModule} from 'ngx-countup';
+import { VaccinationComponent } from './MyComponents/vaccination/vaccination.component';
+
+
+
 
 
 
@@ -20,14 +24,16 @@ import {NgChartsModule} from 'ng2-charts'
     HeaderComponent,
     MainBodyComponent,
     SearchContainerComponent,
+    VaccinationComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatInputModule,
-    NgChartsModule
+    NgChartsModule,
+    CountUpModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

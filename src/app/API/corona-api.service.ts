@@ -36,6 +36,14 @@ export class CoronaAPIService {
     return apiData;
     
   }
+  getIndiaStateWiseData(){
+    const data = this.data.get<any>('https://disease.sh/v3/covid-19/vaccine/coverage?lastdays=30&fullData=false');
+    return data;
+  }
+  getVaccinationDetails(item:any){
+    const data = this.data.get<any>(`https://disease.sh/v3/covid-19/vaccine/coverage/countries/${item}?lastdays=30&fullData=false`)
+    return data;
+  }
 
 
 }

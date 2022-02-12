@@ -18,7 +18,7 @@
   <div class="card active_card" data-aos="fade-up">
     <div class="card-body">
       <h1 class="card-title">Active <b>Cases</b></h1>
-      <h2 id="active_cases" data-target="1000" class="counters">
+      <h2 id="active_cases" [countUp]="activeCases" [options]="myopts">
         {{ activeCases }}
       </h2>
     </div>
@@ -26,7 +26,7 @@
   <div class="card confirmed_card" data-aos="fade-up">
     <div class="card-body">
       <h1 class="card-title">Critical <b>Cases</b></h1>
-      <h2 id="critical_cases" data-target="1000" class="counters">
+      <h2 id="critical_cases" [countUp]="criticalCases" [options]="myopts">
         {{ criticalCases }}
       </h2>
     </div>
@@ -36,7 +36,7 @@
   <div class="card cases_card" data-aos="fade-up">
     <div class="card-body">
       <h1 class="card-title">Total <b>Cases</b></h1>
-      <h2 id="total_cases" data-target="1000" class="counters">
+      <h2 id="total_cases" [countUp]="totalCases" [options]="myopts">
         {{ totalCases }}
       </h2>
     </div>
@@ -44,7 +44,7 @@
   <div class="card deaths_card" data-aos="fade-up">
     <div class="card-body">
       <h1 class="card-title">Total <b>Deaths</b></h1>
-      <h2 id="total_deaths" data-target="1000" class="counters">
+      <h2 id="total_deaths" [countUp]="totalDeaths" [options]="myopts">
         {{ totalDeaths }}
       </h2>
     </div>
@@ -52,7 +52,7 @@
   <div class="card test_card" data-aos="fade-up">
     <div class="card-body">
       <h1 class="card-title">Tests <b>Done</b></h1>
-      <h2 id="tests_done" data-target="1000" class="counters">
+      <h2 id="tests_done" [countUp]="testsDone" [options]="myopts">
         {{ testsDone }}
       </h2>
     </div>

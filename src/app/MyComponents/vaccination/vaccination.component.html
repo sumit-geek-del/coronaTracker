@@ -2,7 +2,7 @@
     <div class="row">
       <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 main-left">
         <h1>Welcome to CoronaMeter👋</h1>
-        <h3>Get Stats from all over the World 🚀</h3>
+        <h3>Get Vaccine details from all over the World 🚀</h3>
         <div class="social-media">
           <h2>Follow US On</h2>
           <a href="https://www.instagram.com/sumit.4945/" target="_blank"><i class="fab fa-instagram fa-5x insta"></i></a>
@@ -17,4 +17,21 @@
       </div>
     </div>
   </div>
-  <app-search-container></app-search-container>
+
+  <div class="container search-container" id="search">
+    <h1>Select the Country 👀 ?</h1>
+    <select class="countrySelect" #box (change)="getCountry(box.value)">
+      <option value="WorldWide" selected>WorldWide</option>
+      <option *ngFor="let countries of countries" value="{{ countries }}">
+        {{ countries }}
+      </option>
+    </select>
+  </div>
+
+  <div class="container search-container1 chart" id="search">
+    <canvas baseChart
+        [datasets]="lineChartData"
+        [labels]="lineChartLabels"
+        [type]="'line'">
+  </canvas>
+  </div>

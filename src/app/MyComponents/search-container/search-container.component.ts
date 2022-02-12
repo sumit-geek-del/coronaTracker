@@ -1,5 +1,7 @@
-import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { CoronaAPIService } from 'src/app/API/corona-api.service';
+
+
 
 @Component({
   selector: 'app-search-container',
@@ -7,6 +9,14 @@ import { CoronaAPIService } from 'src/app/API/corona-api.service';
   styleUrls: ['./search-container.component.css'],
 })
 export class SearchContainerComponent implements OnInit {
+
+
+  myopts = {
+    duration :2,
+    useGrouping:true,
+    useEasing:true
+  }
+
   public SystemName: string = 'Cases';
   public lineChartData: Array<any> = [{}];
   // labels
@@ -25,9 +35,11 @@ export class SearchContainerComponent implements OnInit {
 
   constructor(private data: CoronaAPIService) {
     this.data.myCountry(this.selectedCountry);
+    
   }
 
   ngOnInit(): any {
+    
     this.data.coronaData().subscribe((data: any) => {
       const res = data;
       for (let item of res) {
@@ -45,20 +57,20 @@ export class SearchContainerComponent implements OnInit {
 
     this.data.graphData().subscribe((data) => {
       console.log(data);
-      const everyData = Object.keys(data.cases).slice(0, 30);
+      const everyData = Object.keys(data.cases).reverse().slice(0, 15);
       this.lineChartLabels = everyData;
 
       this.lineChartData =[
         {
-          data:  Object.values(data.cases).slice(0, 30),
+          data:  Object.values(data.cases).reverse().slice(0, 15),
           label : "Cases"
         },
         {
-          data : Object.values(data.deaths).slice(0,30),
+          data : Object.values(data.deaths).reverse().slice(0,15),
           label:"Deaths"
         },
         {
-          data:Object.values(data.recovered).slice(0,30),
+          data:Object.values(data.recovered).reverse().slice(0,15),
           label:"Recovered"
         }
       ]
@@ -88,15 +100,15 @@ export class SearchContainerComponent implements OnInit {
 
     this.lineChartData =[
       {
-        data:  Object.values(newRes.timeline.cases).slice(0, 30),
+        data:  Object.values(newRes.timeline.cases).reverse().slice(0, 15),
         label : "Cases"
       },
       {
-        data : Object.values(newRes.timeline.deaths).slice(0,30),
+        data : Object.values(newRes.timeline.deaths).reverse().slice(0,15),
         label:"Deaths"
       },
       {
-        data:Object.values(newRes.timeline.recovered).slice(0,30),
+        data:Object.values(newRes.timeline.recovered).reverse().slice(0,15),
         label:"Recovered"
       }
     ]
