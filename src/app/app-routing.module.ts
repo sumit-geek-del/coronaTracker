@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './MyComponents/header/header.component';
 import { MainBodyComponent } from './MyComponents/main-body/main-body.component';
 import { VaccinationComponent } from './MyComponents/vaccination/vaccination.component';
 
@@ -11,6 +9,16 @@ const routes: Routes = [
   },
   {
     path:"", component:MainBodyComponent
+  },
+  {
+    path:"states", loadChildren:()=>import('./country-state/country-state.module').then((m)=>{
+      return m.CountryStateModule;
+    }).catch((e)=>{
+      console.log(e);
+    })
+  },
+  {
+    path:'**', redirectTo:''
   }
 ];
 
